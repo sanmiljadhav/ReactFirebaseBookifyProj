@@ -11,22 +11,24 @@ import Register from './pages/Register';
 import NavbarComp from './components/NavbarComp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
+import ListingPage from './pages/ListingPage';
+import Home from './pages/Home';
 
 // const auth = getAuth(app);
 
 function App() {
 
-  const signUpUser=()=>{
-    createUserWithEmailAndPassword(auth, 'sanmil.dev@gmail.com', 'sammie12345').then((value)=>console.log(value))
-  }
+  
   
 
   return (
     <>
       <NavbarComp/>
       <Routes>
+        <Route path='/' element={<Home/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='/login' element={<Login/>}/>
+        <Route path='/book/list' element={<ListingPage/>} />
 
       </Routes>
       
